@@ -4,25 +4,26 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
- 
+
 import javax.servlet.http.HttpServletRequest;
- 
+
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
- 
-import com.souvc.weixin.message.resp.Article;
-import com.souvc.weixin.message.resp.ImageMessage;
-import com.souvc.weixin.message.resp.MusicMessage;
-import com.souvc.weixin.message.resp.NewsMessage;
-import com.souvc.weixin.message.resp.TextMessage;
-import com.souvc.weixin.message.resp.VideoMessage;
-import com.souvc.weixin.message.resp.VoiceMessage;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDriver;
+
+import cxg.weChat.resp.Article;
+import cxg.weChat.resp.ImageMessage;
+import cxg.weChat.resp.MusicMessage;
+import cxg.weChat.resp.NewsMessage;
+import cxg.weChat.resp.TextMessage;
+import cxg.weChat.resp.VideoMessage;
+import cxg.weChat.resp.VoiceMessage;
  
 /**
 * 类名: MessageUtil 
@@ -99,7 +100,7 @@ public class MessageUtil {
         // 得到xml根元素
         Element root = document.getRootElement();
         // 得到根元素的所有子节点
-        List elementList = root.elements();
+        List<Element> elementList = root.elements();
  
         // 遍历所有子节点
         for (Element e : elementList)
@@ -203,3 +204,4 @@ public class MessageUtil {
         xstream.alias("item", new Article().getClass());
         return xstream.toXML(newsMessage);
     }
+}

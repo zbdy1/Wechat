@@ -18,7 +18,7 @@ public class WeChatMethod {
 	public static String secret="61bcf2f07d26c5d4574649f73a86ebd3";
 	public static String modelId="GARua10e8nc8ROuSnMZUmNzJl774En73YdE1h0IREfw";
 	
-	public static String user_openid="ojCyawucu9YCiF_QFwTMhEg1s7q0";//陈晓光
+	public static String user_openid="ojCyawizIY_zAO6vYnBbLIfmXaLo";//陈晓光
 	
 	/**
 	 * 根据应用ID、应用密钥生成临时TOKEN（两小时内有效，如再生成新的，旧的自动失效）

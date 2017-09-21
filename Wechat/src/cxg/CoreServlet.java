@@ -5,6 +5,8 @@ package cxg;
 import java.io.IOException;  
 import java.io.PrintWriter;  
   
+import java.util.Map;
+
 import javax.servlet.ServletException;  
 import javax.servlet.http.HttpServlet;  
 import javax.servlet.http.HttpServletRequest;  
@@ -47,6 +49,13 @@ public class CoreServlet extends HttpServlet {
      */  
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
         // TODO 消息的接收、处理、响应  
+    	try {
+			Map m=MessageUtil.parseXml(request);
+			System.out.println(m);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }  
   
 }  
